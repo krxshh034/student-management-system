@@ -1,0 +1,2 @@
+Student Management System is a beginer project for assessing and maintaining record of students as per requirements on a cli based system. This project can run on low-end devices to maintain records without internet connections.
+More updates on this process will be focused in the future.
