@@ -1,0 +1,24 @@
+# macOS System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code Editor Settings
+.vscode/
+
+# Java Compiled Files & Build Outputs
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Environment Variables & Secrets
+.env
