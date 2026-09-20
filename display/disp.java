@@ -17,11 +17,11 @@ public class disp {
     }
     
     public static void heavydivider() {
-        System.out.println("--------------------------------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
     }
 
     public static void choiceheader() {
-        System.out.println("|| 1 for Add Student || 2 for Remove Student || 3 for Update Student || 4 for Search Student || 5 for Exit ||");
+        System.out.println("|| 1 : Add Student Record || 2 : Remove Student Record || 3 : Update Student Record || 4 : Search Student Record || 5 : Exit ||");
     }
 
     public static void studentdetails() {

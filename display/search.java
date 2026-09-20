@@ -9,6 +9,7 @@ public class search {
 
     public static void searchStudent() {
 
+        
         // input for the name of the student to search
         Scanner in = new Scanner(System.in);
         System.out.print("Enter the name of the student to search: ");
@@ -32,16 +33,34 @@ public class search {
         for (int i = 0; i < names.size(); i++) {
             
             if (names.get(i).equalsIgnoreCase(search_name)) {
+                disp.heavydivider();
                 System.out.println("\u001B[1m### STUDENT RECORD\u001B[0m " + (i + 1) + "\u001B[1m ###\u001B[0m");
                 System.out.println(disp.name + (i < names.size() ? names.get(i) : "N/A"));
                 System.out.println(disp.rn + (i < roll.size() ? roll.get(i) : "N/A"));
                 System.out.println(disp.csec + (i < sec.size() ? sec.get(i) : "N/A"));
-                System.out.println(disp.adm + (i < adms.size() ? adms.get(i) : "N/A") + "\n");
+                System.out.print(disp.adm + (i < adms.size() ? adms.get(i) : "N/A") + "\n");
             }
         }
     } catch (Exception e) {
         System.out.println("An error occurred while searching for the student.");
         e.printStackTrace();
+    }
+    while (true) {
+    disp.heavydivider();
+    System.out.println("|| 1 : Search Again || 2 : Return to Main Menu ||");
+    disp.heavydivider();
+    int choice = in.nextInt();
+    switch (choice) {
+        case 1:
+            searchStudent();
+            break;
+        case 2:
+            // Return to main menu
+            return;
+        default:
+            System.out.println("Invalid choice. Returning to main menu.");
+    }
+    
     }
 }
 }

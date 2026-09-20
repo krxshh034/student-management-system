@@ -12,11 +12,12 @@ public class Main {
     {
         
         while (true) {
-        // display of the student details
-        disp.studentdetails();
 
         // divider display
-        disp.divider();
+        disp.heavydivider();
+        
+        // display of the student details
+        disp.studentdetails();
 
         // heavy divider
         disp.heavydivider();
