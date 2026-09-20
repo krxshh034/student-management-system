@@ -45,8 +45,9 @@ public class CRUD {
             Files.writeString(dbDir.resolve("roll.txt"), ROLL + System.lineSeparator(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
             Files.writeString(dbDir.resolve("sec.txt"), CLASS + System.lineSeparator(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
             Files.writeString(dbDir.resolve("adm.txt"), ADM + System.lineSeparator(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
-
+            in.close();
             return;
+
         } catch (IOException e) {
             System.out.println("An error occurred while saving the data.");
             e.printStackTrace();
@@ -90,6 +91,7 @@ public class CRUD {
                     Files.write(admFile, adms);
                     disp.heavydivider();
                     System.out.println("Desired student record has successfully been removed.");
+                    sc.close();
                     break;
                 }
             }
@@ -272,6 +274,7 @@ public class CRUD {
                 disp.heavydivider();
                 System.out.println("Invalid choice selected.");
         }
+        sc.close();
     } catch (Exception e) {
         System.out.println("An error occurred while updating the student record.");
         e.printStackTrace();
