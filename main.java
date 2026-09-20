@@ -1,6 +1,6 @@
 package StudentManagementSystem;
 
-import StudentManagementSystem.display.disp;
+import StudentManagementSystem.display.*;
 
 import java.util.Scanner;
 
@@ -10,7 +10,8 @@ public class Main {
     
     public static void main (String args [] ) 
     {
-        
+        int j = 0;
+
         while (true) {
 
         // divider display
@@ -18,6 +19,10 @@ public class Main {
         
         // display of the student details
         disp.studentdetails();
+        
+        // display for saved new student record.
+        if (j == 1) 
+            disp.inputsave();
 
         // heavy divider
         disp.heavydivider();
@@ -35,9 +40,11 @@ public class Main {
         switch (ch) {
             case 1:
                 StudentManagementSystem.src.CRUD.input();
+                j++;
                 break;
             case 2:
                 // Code for removing a student
+                StudentManagementSystem.src.CRUD.remove();
                 break;
             case 3:
                 // Code for updating a student

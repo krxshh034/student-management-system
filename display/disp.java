@@ -24,6 +24,9 @@ public class disp {
         System.out.println("|| 1 : Add Student Record || 2 : Remove Student Record || 3 : Update Student Record || 4 : Search Student Record || 5 : Exit ||");
     }
 
+    public static void inputsave() {
+        System.out.println("New student data saved successfully.");
+    }
     public static void studentdetails() {
         //path declaration for the database folder and text files
         Path dbDir = Paths.get("StudentManagementSystem/database");

@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
+import StudentManagementSystem.display.disp;
 
 public class CRUD {
     static String NAME;
@@ -13,6 +14,7 @@ public class CRUD {
     static String CLASS;
     static String ADM;
 
+    // TO ADD STUDENT RECORDS
     public static void input() {
         Scanner in = new Scanner(System.in);
 
@@ -43,8 +45,7 @@ public class CRUD {
             Files.writeString(dbDir.resolve("sec.txt"), CLASS + System.lineSeparator(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
             Files.writeString(dbDir.resolve("adm.txt"), ADM + System.lineSeparator(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
 
-            System.out.println("New student data saved successfully.");
-
+            return;
         } catch (IOException e) {
             System.out.println("An error occurred while saving the data.");
             e.printStackTrace();
@@ -52,4 +53,77 @@ public class CRUD {
 
         in.close();
     }
-}
+
+        // TO REMOVE STUDENT RECORDS
+        public static void remove() {
+            
+        // for input
+        Scanner sc = new Scanner(System.in);
+        
+        //path declaration for the database folder and text files
+        Path dbDir = Paths.get("StudentManagementSystem/database");
+        Path nameFile = dbDir.resolve("names.txt");
+        Path rollFile = dbDir.resolve("roll.txt");
+        Path classFile = dbDir.resolve("sec.txt");
+        Path admFile = dbDir.resolve("adm.txt");
+
+        System.out.println("Enter the name of the student to remove record: ");
+        String nameToRemove = sc.nextLine();
+
+        try {
+            // Read all lines from each file into separate lists
+            java.util.List<String> names = Files.readAllLines(nameFile);
+            java.util.List<String> roll = Files.readAllLines(rollFile);
+            java.util.List<String> sec = Files.readAllLines(classFile);
+            java.util.List<String> adms = Files.readAllLines(admFile);
+
+            for (int i = 0; i<names.size(); i++) {
+                if (names.get(i).equalsIgnoreCase(nameToRemove)) {
+                    names.remove(i);
+                    roll.remove(i);
+                    sec.remove(i);
+                    adms.remove(i);
+                    Files.write(nameFile, names);
+                    Files.write(rollFile, roll);
+                    Files.write(classFile, sec);
+                    Files.write(admFile, adms);
+                    System.out.println("Desired student record has successfully been removed.");
+                    break;
+                }
+            }
+        } catch (Exception e) {
+        System.out.println("An error occurred while searching for the student.");
+        e.printStackTrace();
+        }
+        while (true) {
+        disp.heavydivider();
+        System.out.println("|| 1 : Remove Another Student Record || 2 : Return to Main Menu ||");
+        disp.heavydivider();
+        int choice = sc.nextInt();
+        if (choice==1) {
+        remove();
+        break; }
+        else if (choice==2){
+        return;
+    }
+        else {
+        System.out.println("Invalid choice. Returning to main menu.");
+            return;
+    }
+    
+    }
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,8 +9,9 @@ public class search {
 
     public static void searchStudent() {
 
-        
+
         // input for the name of the student to search
+        @SuppressWarnings("resource")
         Scanner in = new Scanner(System.in);
         System.out.print("Enter the name of the student to search: ");
         String search_name = in.nextLine();
@@ -40,27 +41,32 @@ public class search {
                 System.out.println(disp.csec + (i < sec.size() ? sec.get(i) : "N/A"));
                 System.out.print(disp.adm + (i < adms.size() ? adms.get(i) : "N/A") + "\n");
             }
+            
         }
+
     } catch (Exception e) {
         System.out.println("An error occurred while searching for the student.");
         e.printStackTrace();
     }
+
     while (true) {
     disp.heavydivider();
     System.out.println("|| 1 : Search Again || 2 : Return to Main Menu ||");
     disp.heavydivider();
     int choice = in.nextInt();
-    switch (choice) {
-        case 1:
-            searchStudent();
-            break;
-        case 2:
-            // Return to main menu
+    if (choice==1) {
+        searchStudent();
+        break; }
+    else if (choice==2){
+        return;
+    }
+    else {
+        System.out.println("Invalid choice. Returning to main menu.");
             return;
-        default:
-            System.out.println("Invalid choice. Returning to main menu.");
+    }
+    
     }
     
     }
 }
-}
+
