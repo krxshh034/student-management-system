@@ -47,7 +47,7 @@ public class disp {
 
         // print the student details in a formatted table
         for (int i = 0; i < names.size(); i++) {
-            System.out.println("### STUDENT RECORD " + (i + 1) + " ###");
+            System.out.println("\u001B[1m### STUDENT RECORD\u001B[0m " + (i + 1) + "\u001B[1m ###\u001B[0m");
             System.out.println(name + (i < names.size() ? names.get(i) : "N/A"));
             System.out.println(rn + (i < roll.size() ? roll.get(i) : "N/A"));
             System.out.println(csec + (i < sec.size() ? sec.get(i) : "N/A"));

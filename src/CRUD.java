@@ -49,5 +49,7 @@ public class CRUD {
             System.out.println("An error occurred while saving the data.");
             e.printStackTrace();
         }
+
+        in.close();
     }
 }
