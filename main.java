@@ -48,6 +48,7 @@ public class Main {
                 break;
             case 3:
                 // Code for updating a student
+                StudentManagementSystem.src.CRUD.update();
                 break;
             case 4:
                 // Code for searching a student

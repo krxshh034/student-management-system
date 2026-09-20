@@ -13,6 +13,7 @@ public class search {
         // input for the name of the student to search
         @SuppressWarnings("resource")
         Scanner in = new Scanner(System.in);
+        disp.heavydivider();
         System.out.print("Enter the name of the student to search: ");
         String search_name = in.nextLine();
 
